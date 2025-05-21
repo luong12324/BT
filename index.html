@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>AES Encrypt/Decrypt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        label {
+            margin-top: 15px;
+            display: block;
+            font-weight: 500;
+            color: #444;
+        }
+
+        input[type="file"],
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            margin-top: 8px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0b70d1;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                margin: 40px 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>AES Encrypt/Decrypt</h2>
+        <form action="/process" method="POST" enctype="multipart/form-data">
+            <label for="file">Chọn file:</label>
+            <input type="file" name="file" id="file" required>
+
+            <label for="key">Nhập khoá (tuỳ ý):</label>
+            <input type="text" name="key" id="key" placeholder="Nhập khoá tối đa 32 ký tự" required>
+
+            <label for="action">Hành động:</label>
+            <select name="action" id="action">
+                <option value="encrypt">🔒 Mã hoá</option>
+                <option value="decrypt">🔓 Giải mã</option>
+            </select>
+
+            <button type="submit">🚀 Thực hiện</button>
+        </form>
+    </div>
+</body>
+</html>
